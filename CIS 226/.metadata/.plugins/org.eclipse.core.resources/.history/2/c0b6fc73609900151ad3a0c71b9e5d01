@@ -1,0 +1,48 @@
+//Filename: Student.java
+//Written by: Kevin Phan
+//Written on: 12/2/2015
+
+public class Student {
+	private int score[] = {0,0,0};
+	String studentID;
+	
+	Student(String ID, int grade1, int grade2, int grade3)
+	{
+		studentID = ID;
+		score[0] = grade1;
+		score[1] = grade2;
+		score[2] = grade3;
+	}
+	Student(String ID)
+	{
+		studentID = ID; 
+	}
+	
+	public void setTestScore(int testNo, int testScore) {
+		score[testNo] = testScore;
+	}
+	
+	public int getTestScore(int testNo) {
+		return score[testNo];
+	}
+
+	
+	
+	public double average()
+	{
+		int total;
+		double ave;
+		total = score[0] + score[1] + score[2];
+		ave = total / 3;
+		ave = ave + (ave % 3);
+		return ave;
+	}
+	
+	public void DisplayInfor()
+	{
+		System.out.println("Student ID: " + studentID);
+		System.out.println("Test 1 score: " + score[0]);
+		System.out.println("Test 2 score: " + score[1]);
+		System.out.println("Test 3 score: " + score[2]);
+	}
+}

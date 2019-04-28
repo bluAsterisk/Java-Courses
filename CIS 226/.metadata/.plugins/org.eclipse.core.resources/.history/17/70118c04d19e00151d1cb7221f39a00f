@@ -1,0 +1,37 @@
+//Filename: UseCarRental.java
+//Written by: Kevin Phan
+//Written on: 12/9/15
+
+import java.util.Scanner;
+public class UseCarRental {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int zip;
+		int days;
+		Scanner inputDevice = new Scanner(System.in);
+		System.out.println("Enter name: ");
+		String client = inputDevice.nextLine();
+		System.out.println("Enter zip code: ");
+		zip = inputDevice.nextInt();
+		System.out.println("Enter type of car: ");
+		System.out.println("e - economy");
+		System.out.println("m - midsize");
+		System.out.println("f - full size");
+		System.out.println("l - luxury");
+		String carType = inputDevice.nextLine();
+		carType.toLowerCase();
+		System.out.println("Enter days to rent: ");
+		days = inputDevice.nextInt();
+		if(carType == "l"){
+			LuxuryCarRental car = new LuxuryCarRental(client, zip, carType, days);
+			car.display();
+		}
+		if((carType == "e")||(carType == "m") || (carType == "f")){
+			CarRental car = new CarRental(client, zip,carType, days);
+			car.display();
+		}
+
+	}
+
+}

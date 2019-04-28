@@ -1,0 +1,35 @@
+//Filename: CarRental.java
+//Written by: Kevin Phan
+//Written on: 12/9/15
+
+public class CarRental {
+	protected String name;
+	protected int zipCode;
+	protected String carSize;
+	protected double rentalFee;
+	protected int rentalDays;
+	protected double totalFee;
+	CarRental(String name, int zipCode, String carSize, int rentalDays){
+		this.name = name;
+		this.zipCode = zipCode;
+		this.carSize = carSize;
+		this.rentalDays = rentalDays;
+		if (carSize.equals("e")){
+			rentalFee = 29.99;
+		}
+		else if (carSize.equals("m")){
+			rentalFee = 38.99;
+		}
+		else if (carSize.equals("f")){
+			rentalFee = 43.50;
+		}
+	}
+	public void display(){
+		System.out.println("Car for " + name + "From zip code " + zipCode);
+		System.out.println("Type = " + carSize);
+		System.out.println("Daily fee = " + rentalFee);
+		System.out.println("Days = " + rentalDays);
+		System.out.println("***Total rental is $" + totalFee);
+	}
+
+}

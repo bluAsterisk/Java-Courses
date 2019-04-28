@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 3 elements to &apos;HW03/com.Homework81&apos;&#x0D;&#x0A;- Original project: &apos;HW03&apos;&#x0D;&#x0A;- Destination element: &apos;HW03/com.Homework81&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Square.java&#x0D;&#x0A;     Cube.java&#x0D;&#x0A;     DemoSquare.java&#x0D;&#x0A;- Update references to refactored element" description="Move compilation units" destination="/&lt;com.Homework81" element1="/&lt;{Square.java" element2="/&lt;{Cube.java" element3="/&lt;{DemoSquare.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1518484301805" units="3" version="1.0"/>
+</session>

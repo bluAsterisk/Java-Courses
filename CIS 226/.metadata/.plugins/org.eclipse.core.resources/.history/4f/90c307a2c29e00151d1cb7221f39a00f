@@ -1,0 +1,7 @@
+//Filename: LuxuryCarRental.java
+//Written by: Kevin Phan
+//Written on: 12/9/15
+
+public class LuxuryCarRental extends CarRental {
+
+}

@@ -1,0 +1,36 @@
+//Filename: CarRental.java
+//Written by: Kevin Phan
+//Written on: 12/9/15
+
+public class CarRental {
+	protected String name;
+	protected int zipCode;
+	protected String carSize;
+	protected double rentalFee;
+	protected int rentalDays;
+	protected double totalFee;
+	CarRental(String name, int zipCode, String carSize, int rentalDays){
+		switch (carSize){
+		case "e":
+			rentalFee = 29.99;
+			break;
+		case "m":
+			rentalFee = 38.99;
+			break;
+		case "f":
+			rentalFee = 43.50;
+			break;
+		default:
+			System.out.println("Invalid size, please choose e, m, f, or l");
+			break;
+		}
+	}
+	public void display(){
+		System.out.println("Car for " + name + "From zip code " + zipCode);
+		System.out.println("Type = " + carSize);
+		System.out.println("Daily fee = " + rentalFee);
+		System.out.println("Days = " + rentalDays);
+		System.out.println("***Total rental is $" + totalFee);
+	}
+
+}

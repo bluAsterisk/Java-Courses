@@ -1,0 +1,102 @@
+// The tester for the generic search tree assignment
+// This file should not be changed.
+public class TestGenericSearchTree
+{
+  static java.io.BufferedReader br;
+  public static StudentKey GetKey() throws java.io.IOException
+  {
+    String userInput;
+    double NewWidget;
+    int newID;
+    System.out.print("Enter Widget ");
+    userInput = br.readLine();
+    NewWidget = Float.parseFloat(userInput);
+    System.out.print("Enter StudentID ");
+    userInput = br.readLine();
+    newID = Integer.parseInt(userInput);
+    StudentKey Answer = new StudentKey(NewWidget,newID);
+    return Answer;
+  };
+  public static StudentInfo GetInfo() throws java.io.IOException
+  {
+    String userInput;
+    String Name;
+    char Grade;
+    System.out.print("Enter Name ");
+    Name = br.readLine();
+    System.out.print("Enter Letter Grade ");
+    userInput = br.readLine();
+    Grade = userInput.charAt(0);
+    StudentInfo Answer = new StudentInfo(Name,Grade);
+    return Answer;
+  };
+    public static void main(String argv[]) throws java.io.IOException, SearchTree.NotFound
+  {
+    SearchTree<StudentKey,StudentInfo> myTree =
+      new SearchTree<StudentKey,StudentInfo>();
+    String userInput;
+    StudentKey key;
+    StudentInfo data;
+    int answer;
+    br = new java.io.BufferedReader(
+      new java.io.InputStreamReader(System.in));
+    do
+    {
+      userInput = "";
+      try
+      {
+        System.out.println(
+          "r)eport, f)ind, i)nsert, d)elete, s)ize, h)eight u)pdate q)uit");
+        System.out.println("enter choice: ");
+        userInput = br.readLine();
+        switch (userInput.charAt(0))
+        {
+          case 'r' :
+            myTree.Report();
+            System.out.println(" ");
+            break;
+          case 'f' :
+            System.out.println("Enter key ");
+            key = GetKey();
+            data = myTree.Find(key);
+            System.out.println("Data was: ");
+	    data.Visit();
+            break;
+          case 'i' :
+            System.out.println("Enter key ");
+            key = GetKey();
+            System.out.println("Enter Data ");
+            data = GetInfo();
+	    data.Visit();
+            myTree.Insert(key, data);
+            break;
+          case 'd' :
+            System.out.println("Enter key ");
+            key = GetKey();
+            myTree.Delete(key);
+            break;
+          case 's' :
+            answer = myTree.Size();
+            System.out.println("Tree size is " + answer);
+            break;
+          case 'h' :
+            answer = myTree.Height();
+            System.out.println("Tree height is " + answer);
+            break;
+          case 'u' :
+            System.out.println("Enter key: ");
+            key = GetKey();
+            System.out.println("Enter Data: ");
+            data = GetInfo();
+            myTree.Update(key, data);
+          default :
+            break;
+        }
+      }
+      catch (Error e)
+      {
+        System.out.println("Oops, try again");
+      }
+    } while (userInput.charAt(0) != 'q');
+  };
+};

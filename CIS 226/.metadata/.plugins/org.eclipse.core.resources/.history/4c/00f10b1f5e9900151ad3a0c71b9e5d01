@@ -1,0 +1,21 @@
+//Filename: TestScores.java
+//Written by: Kevin Phan
+//Written on: 12/2/2015
+
+public class TestScores {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Student student1 = new Student("FC123", 100, 80, 94);
+	Student student2 = new Student("FC456");
+	
+	student2.setTestScore(0, 78);
+	student2.setTestScore(1, 92);
+	student2.setTestScore(2, 80);
+	
+	student1.DisplayInfor();
+	System.out.print("Average test score:" + student1.average());
+
+	}
+
+}

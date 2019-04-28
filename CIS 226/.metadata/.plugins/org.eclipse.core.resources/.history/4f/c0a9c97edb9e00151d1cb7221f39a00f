@@ -1,0 +1,31 @@
+//Filename: LuxuryCarRental.java
+//Written by: Kevin Phan
+//Written on: 12/9/15
+
+import java.util.Scanner;
+public class LuxuryCarRental extends CarRental {
+	LuxuryCarRental(String name, int zipCode, String carSize, int rentalDays){
+		super(name, zipCode, carSize, rentalDays);
+		Scanner input = new Scanner(System.in);
+		if (carSize.equals("l"))
+			{
+			rentalFee = 79.99;
+			System.out.println("Do you want a chauffeur?	(Y/N)");
+				if ((input.nextLine().toLowerCase().equals("y")))
+					{
+						rentalFee = rentalFee + 200;
+					}
+			}
+		
+		else{
+			System.out.println("Invalid size, please choose e, m, f, or l");
+		}
+	}
+	public void display(){
+		super.display();
+		totalFee = rentalFee * rentalDays;
+		System.out.println("Chauffeur @ $200/day = $" + (200 * rentalDays));
+		System.out.println("***Total rental is $" + totalFee);
+	}
+
+}

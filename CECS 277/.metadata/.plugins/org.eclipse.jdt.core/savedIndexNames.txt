@@ -1,0 +1,5 @@
+INDEX VERSION 1.130+D:\Documents\School\Java\CECS 277\.metadata\.plugins\org.eclipse.jdt.core
+1812253397.index
+4066402166.index
+2362516427.index
+453245507.index
